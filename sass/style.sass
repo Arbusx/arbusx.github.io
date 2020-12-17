@@ -1,0 +1,901 @@
+@import 'reset'
+@import 'fonts'
+
+$font_os: 'Open Sans', 'Segoe UI', 'Arial', sans-serif
+$font_pt: 'PT Sans', 'Helvetica', 'Arial', sans-serif
+$font_ro: 'Russo One', 'Helvetica', sans-serif
+
+
+$color_red: rgb(238, 29, 36)
+$color_red2: rgb(200, 0, 0)
+
+
+
+input[type="number"]
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		-moz-appearance: textfield
+		-webkit-appearance: none
+		margin: 0
+	&:hover,
+	&:focus
+		-moz-appearance: number-input
+
+@keyframes animation_load
+	0%
+		transform: rotateZ(0deg)
+	100%
+		transform: rotateZ(360deg)
+
+@keyframes animation_pulse
+	0%
+		transform: scale(0.5)
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		transform: scale(1.2)
+		opacity: 0
+
+@keyframes animation_shake
+	0%
+		transform: rotateZ(0deg)
+	1%
+		transform: rotateZ(-30deg)
+	2%
+		transform: rotateZ(15deg)
+	3%
+		transform: rotateZ(-10deg)
+	4%
+		transform: rotateZ(7.5deg)
+	5%
+		transform: rotateZ(-6deg)
+	6%
+		transform: rotateZ(0deg)
+	100%
+		transform: rotateZ(0deg)
+
+
+@mixin trs($s: 0.1s)
+	transition: background $s ease, color $s ease, filter $s ease
+
+
+
+
+.phone_link
+	pointer-events: none
+
+body
+	font-family: $font_pt
+	&.m_header .modal_header
+		display: block
+	&.m_success .modal_success
+		display: block
+	&:before
+		position: fixed
+		display: block
+		content: ""
+		background-image: url(/img/loading.png)
+		background-position: 50%
+		background-repeat: no-repeat
+		background-size: cover
+		width: 100px
+		height: 100px
+		top: calc(50% - 50px)
+		left: calc(50% - 50px)
+		opacity: 0
+		z-index: -100
+		animation: animation_load 2s linear infinite
+	&:after
+		position: fixed
+		display: block
+		content: ""
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		opacity: 0
+		z-index: -100
+		background-color: #000
+		filter: opacity(0.6)
+	&.loadSend
+		&:before
+			transition: opacity 3s cubic-bezier(0.6, 0, 1, 1)
+			z-index: 100
+			opacity: 1
+		&:after
+			transition: opacity 3s cubic-bezier(0.6, 0, 1, 1)
+			z-index: 99
+			opacity: 1
+
+
+
+.container
+	width: 1170px
+	margin-right: auto
+	margin-left: auto
+	padding-left: 15px
+	padding-right: 15px
+	box-sizing: border-box
+	z-index: 2
+
+
+/***
+ *    ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+ *    ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+ *    ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+ *    ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+ *    ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+ *    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+ *                                                    
+ */
+header
+	background-image: url('/img/bg_header.png')
+	>div
+		background-color: rgba(0, 0, 0, 0.2)
+	.container
+		height: 76px
+		display: flex
+		flex-wrap: nowrap
+		justify-content: flex-end
+		align-items: center
+	.logo_header
+		user-select: none
+	.empty
+		flex-grow: 1
+	.phone
+		position: relative
+		display: flex
+		flex-wrap: nowrap
+		align-items: center
+		font-family: $font_os
+		cursor: text
+		margin: 0px 15px
+		>div
+			margin: 0px 7px
+		a
+			font-size: 22px
+			line-height: 0.7
+			font-weight: 700
+			text-decoration: none
+		img
+			width: 45px
+			height: 45px
+			cursor: default
+			user-select: none
+	.whatsapp
+		padding: 9px 24px
+		border: 2px solid
+		border-radius: 25px
+		border-color: $color_red2
+		text-decoration: none
+		user-select: none
+		@include trs
+		span
+			font-size: 15px
+			color: $color_red2
+			font-family: $font_ro
+		&:hover
+			background-color: rgba(0, 0, 0, 0.2)
+			span
+				color: #000
+
+/***
+ *     ██████╗     ██╗
+ *    ██╔════╝    ███║
+ *    ██║         ╚██║
+ *    ██║          ██║
+ *    ╚██████╗     ██║
+ *     ╚═════╝     ╚═╝
+ *                    
+ */
+.c1
+	background-image: url('/img/bg_c1.jpg')
+	background-size: cover
+	background-position: center right
+	background-repeat: no-repeat
+	>div
+		background: rgba(0,0,0,0.4)
+	.container
+		height: 566px
+		display: flex
+		align-items: center
+	.block
+		width: 440px
+		margin-right: auto
+	h1
+		font-size: 64px
+		font-family: "Russo One", "Helvetica", sans-serif
+		text-transform: uppercase
+		letter-spacing: 0.02em
+		font-weight: 400
+		line-height: 1.1
+		color: #fff
+	p
+		position: relative
+		margin-top: 17px
+		padding-top: 20px
+		font-family: $font_pt
+		font-size: 22px
+		line-height: 1.6
+		color: #fff
+		&:before
+			position: absolute
+			content: ""
+			width: 283px
+			height: 3px
+			background-color: $color_red2
+			left: 0
+			top: 0
+	span
+		display: block
+		cursor: text
+		a
+			font-family: $font_ro
+			font-weight: 700
+			font-size: 82px
+			color: $color_red
+			text-decoration: none
+
+
+
+
+/***
+ *     ██████╗    ██████╗ 
+ *    ██╔════╝    ╚════██╗
+ *    ██║          █████╔╝
+ *    ██║         ██╔═══╝ 
+ *    ╚██████╗    ███████╗
+ *     ╚═════╝    ╚══════╝
+ *                        
+ */
+.c2
+	background-color: rgb(24, 23, 23)
+	.container
+		padding: 60px 0px
+	.block
+		display: flex
+		flex-wrap: nowrap
+		justify-content: space-between
+		max-width: 980px
+		margin: 0 auto
+		>div
+			position: relative
+			width: 33.3333%
+			padding: 0px 30px
+			&:not(:last-child):before
+				position: absolute
+				content: ""
+				width: 3px
+				height: 110%
+				background-color: $color_red2
+				right: 0
+				top: -5%
+	h2
+		font-size: 36px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		font-family: $font_ro
+		font-weight: 400
+		color: $color_red
+		margin-bottom: 8px
+	p
+		color: #fff
+		font-size: 18px
+
+
+
+/***
+ *     ██████╗    ██████╗ 
+ *    ██╔════╝    ╚════██╗
+ *    ██║          █████╔╝
+ *    ██║          ╚═══██╗
+ *    ╚██████╗    ██████╔╝
+ *     ╚═════╝    ╚═════╝ 
+ *                        
+ */
+.c3
+	background-color: #aaa
+	.container
+		display: flex
+		// align-items: center
+		justify-content: center
+		flex-wrap: wrap
+		// height: 750px
+		padding: 125px 0px
+	.block
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: right
+		>div
+			width: 50%
+	h2
+		text-transform: uppercase
+		font-size: 36px
+		font-weight: 400
+		font-family: $font_ro
+		letter-spacing: 0.05em
+		color: #000
+	p
+		font-size: 18px
+		font-family: $font_pt
+		line-height: 1.3
+		padding: 30px 0px
+		color: #000
+	.left
+		padding: 0px 40px 15px 130px
+		img
+			height: 88px
+			user-select: none
+	.right
+		margin-right: auto
+		img
+			display: block
+			height: 340px
+			user-select: none
+	.call_wa
+		>div
+			display: flex
+			flex-wrap: nowrap
+			width: 600px
+			padding: 0px 25px
+			border-radius: 30px
+			background: rgb(24,23,23)
+			background: linear-gradient(125deg, rgb(24,23,23) 0%, rgb(24,23,23) 50%, $color_red2 50%, $color_red2 100%)
+			box-sizing: border-box
+			>div
+				width: 50%
+				text-align: center
+				&:hover
+					a
+						color: #000
+	a
+		display: block
+		padding: 24px 0px
+		font-family: $font_ro
+		font-size: 22px
+		letter-spacing: 0.05em
+		color: #fff
+		text-decoration: none
+		@include trs
+	.call_wa
+		margin-top: 80px
+	.call
+		cursor: pointer
+
+
+/***
+ *     ██████╗    ██╗  ██╗
+ *    ██╔════╝    ██║  ██║
+ *    ██║         ███████║
+ *    ██║         ╚════██║
+ *    ╚██████╗         ██║
+ *     ╚═════╝         ╚═╝
+ *                        
+ */
+.c4
+	background-image: url('/img/bg_c4.jpg')
+	background-size: cover
+	background-position: center bottom
+	background-repeat: no-repeat
+	>div
+		background: rgba(0,0,0,0.8)
+	.container
+		display: flex
+		align-items: center
+		height: 606px
+	.block
+		display: flex
+		max-width: 980px
+		margin: 0 auto
+		>div
+			width: 33.3333%
+			padding: 0px 30px
+			box-sizing: border-box
+	img
+		max-width: 128px
+		user-select: none
+	p
+		position: relative
+		font-size: 28px
+		font-family: $font_ro
+		font-weight: 500
+		color: #fff
+		text-transform: uppercase
+		letter-spacing: 0.1em
+		line-height: 1.1
+		margin-bottom: 30px
+		padding-bottom: 30px
+		&:after
+			position: absolute
+			content: ""
+			width: 70px
+			height: 3px
+			background-color: $color_red2
+			left: 0
+			bottom: 0
+	span
+		display: block
+		font-size: 18px
+		font-family: $font_pt
+		color: #fff
+		line-height: 1.3
+
+
+
+
+/***
+ *     ██████╗    ███████╗
+ *    ██╔════╝    ██╔════╝
+ *    ██║         ███████╗
+ *    ██║         ╚════██║
+ *    ╚██████╗    ███████║
+ *     ╚═════╝    ╚══════╝
+ *                        
+ */
+.c5
+	background-color: #181717
+	.block
+		display: flex
+		justify-content: center
+		flex-wrap: nowrap
+		text-align: right
+		padding: 60px 0px
+		>div
+			width: 50%
+	.left
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		justify-content: center
+		padding-right: 25px
+	p, span
+		max-width: 400px
+	p
+		position: relative
+		font-size: 36px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		font-family: $font_ro
+		font-weight: 400
+		color: #ee1d24
+		margin-bottom: 25px
+		padding-bottom: 25px
+		&:after
+			position: absolute
+			content: ""
+			width: 135px
+			height: 3px
+			background-color: $color_red2
+			right: 0
+			bottom: 0
+	span
+		color: #fff
+		font-family: $font_pt
+		font-size: 18px
+		line-height: 1.3
+	img
+		width: 545px
+		user-select: none
+	.img
+		width: 545px
+		height: 306.5px
+		display: block
+		background-image: url('/img/c5_1.jpg')
+		background-size: cover
+		background-position: center
+
+
+
+
+
+
+
+/***
+ *     ██████╗     ██████╗ 
+ *    ██╔════╝    ██╔════╝ 
+ *    ██║         ███████╗ 
+ *    ██║         ██╔═══██╗
+ *    ╚██████╗    ╚██████╔╝
+ *     ╚═════╝     ╚═════╝ 
+ *                         
+ */
+.c6
+	background-color: #e0e0e0
+	.container
+		padding: 90px 0px 120px 0px
+	h2
+		position: relative
+		font-size: 36px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		text-align: center
+		font-family: $font_ro
+		font-weight: 400
+		color: $color_red
+		margin: 0 auto
+		padding-bottom: 20px
+		&:after
+			position: absolute
+			content: ""
+			width: 334px
+			height: 3px
+			background-color: $color_red
+			bottom: 0
+			left: calc(50% - 167px)
+	.block
+		position: relative
+		display: flex
+		flex-wrap: wrap
+		text-align: left
+		width: 500px
+		margin: 70px auto 0 auto
+		box-sizing: border-box
+		&:before,
+		&:after
+			position: absolute
+			content: ""
+			top: -45px
+			height: 450px
+			background-position: center center
+			background-repeat: no-repeat
+			background-size: cover
+		&:before
+			left: -407px
+			width: 407px
+			background-image: url('/img/c6_left.jpg')
+		&:after
+			right: -272px
+			width: 272px
+			background-image: url('/img/c6_right.jpg')
+		span
+			position: relative
+			width: 100%
+			padding-left: 50px
+			margin-left: 65px
+			font-family: $font_ro
+			font-size: 22px
+			line-height: 2.3
+			&:before
+				position: absolute
+				display: block
+				content: ""
+				width: 40px
+				height: 40px
+				top: 5px
+				left: 0
+				background-image: url('/img/c6_1.svg')
+				background-position: center center
+				background-repeat: no-repeat
+				background-size: contain
+		div
+			margin: 40px auto 0 auto
+			cursor: text
+		a
+			font-family: $font_ro
+			font-weight: 700
+			font-size: 80px
+			color: #000
+			letter-spacing: 0.02em
+			text-decoration: none
+
+
+
+
+
+
+
+
+/***
+ *    ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
+ *    ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+ *    █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+ *    ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+ *    ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+ *    ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+ *                                                       
+ */
+footer
+	background-color: #181717
+	.container
+		padding: 70px 0px 60px 0px
+	.top
+		display: flex
+		position: relative
+		flex-wrap: nowrap
+		margin-bottom: 40px
+		padding: 0px 15px 40px 15px
+		&:after
+			position: absolute
+			content: ""
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 1px
+			background-color: #fff
+	.left
+		padding: 5px
+		box-sizing: content-box
+		img
+			user-select: none
+		span
+			display: block
+			font-size: 16px
+			font-family: $font_pt
+			color: rgb(172, 172, 172)
+			text-align: center
+	.center
+		display: flex
+		justify-content: space-evenly
+		align-items: center
+		flex-grow: 1
+		padding: 0px 50px
+		span
+			margin: 0px 10px
+			color: #fff
+			font-size: 11px
+			letter-spacing: 0.1em
+			font-family: $font_pt
+			text-transform: uppercase
+			@include trs
+			&:hover
+				color: rgb(76, 175, 80)
+	.tel
+		cursor: text
+		text-align: right
+		line-height: 1.2
+		white-space: nowrap
+		a
+			color: #fff
+			font-family: $font_os
+			font-size: 22px
+			font-weight: 700
+			text-decoration: none
+	.wa
+		a
+			display: block
+			padding: 8px 24px
+			margin-top: 10px
+			border: 2px solid
+			border-radius: 25px
+			border-color: $color_red2
+			text-decoration: none
+			text-align: center
+			user-select: none
+			@include trs
+			&:hover
+				background-color: rgba(0, 0, 0, 0.2)
+				span
+					color: #fff
+					font-weight: 400
+			&:active
+				background-color: #000
+		span
+			font-size: 15px
+			font-family: $font_ro
+			font-weight: 700
+			color: $color_red2
+	.bottom
+		display: flex
+		flex-wrap: nowrap
+		justify-content: space-between
+		padding: 0px 20px
+		>div
+			width: 50%
+			max-width: 265px
+	.copy
+		min-width: 265px
+		p
+			opacity: 0.5
+			color: #fff
+			line-height: 1.2
+	.partners
+		white-space: nowrap
+		padding-right: 110px
+		p
+			display: flex
+			align-items: center
+			justify-content: flex-end
+		span
+			opacity: 0.5
+			color: #fff
+			font-size: 11px
+		img
+			user-select: none
+			width: 67px
+			margin: 5px 0px 0px 6px
+
+
+
+
+
+
+.pulse
+	position: fixed
+	display: flex
+	align-items: center
+	justify-content: center
+	bottom: -10px
+	right: 10px
+	right: calc((100vw - 1210px) / 2)
+	-webkit-transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%)
+	border-radius: 50%
+	width: 80px
+	height: 80px
+	z-index: 5
+	cursor: pointer
+	box-shadow: 0 0 18px rgba(0, 0, 0, 0.4)
+	&:before,
+	&:after
+		position: absolute
+		display: block
+		content: ""
+		left: -20px
+		right: -20px
+		top: -20px
+		bottom: -20px
+		border: 1px solid $color_red2
+		border-radius: 50%
+		opacity: 0
+		animation: animation_pulse 1.5s linear infinite
+		backface-visibility: hidden
+		cursor: default
+	&:after
+		animation-delay: .5s
+	&:hover
+		&:before,
+		&:after
+			display: none
+		.img:hover
+			transition: filter .1s linear
+			animation-play-state: paused
+			filter: brightness(1.2)
+	.img
+		display: block
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		background: rgba(200, 0, 0, 0.7)
+		background-image: url(/img/whatsapp.png)
+		background-size: 44px
+		background-position: 50%
+		background-repeat: no-repeat
+		box-sizing: border-box
+		animation: animation_shake 12s linear infinite 5s
+
+
+
+
+
+
+
+
+/***
+ *    ███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗     
+ *    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║     
+ *    ██╔████╔██║██║   ██║██║  ██║███████║██║     
+ *    ██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║     
+ *    ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗
+ *    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+ *                                                
+ */
+.modal
+	position: absolute
+	z-index: 10
+	.bg
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		background-color: #000
+		opacity: .7
+	.close
+		position: absolute
+		top: 0
+		right: 0
+		margin-top: 6px
+		margin-right: 9px
+		font-size: 20px
+		line-height: 1
+		color: #fff
+		opacity: .8
+		cursor: pointer
+		user-select: none
+		&:hover
+			opacity: 1
+	.body
+		position: fixed
+		top: 50%
+		left: 50%
+		padding: 50px 40px
+		border: 1px solid #000
+		background-color: #000
+		transform: translate(-50%, -50%)
+		box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.6)
+	&_header
+		display: none
+		z-index: 11
+		.body
+			width: 360px
+			box-sizing: border-box
+		form
+			position: relative
+			&.er
+				.error
+					display: block
+				input
+					outline: 2px solid #f00
+		.error
+			display: none
+			position: absolute
+			opacity: 1
+			top: 8px
+			left: 5px
+			color: #ff3a3a
+			font-size: 12px
+		.center
+			margin-bottom: 10px
+			>span
+				color: #000
+				font-size: 16px
+				font-family: $font_os
+				letter-spacing: 0.05em
+				text-transform: uppercase
+			input
+				position: relative
+				width: 100%
+				height: 32px
+				margin: 28px 0px 10px
+				padding: 0px 25px 0px 50px
+				font-size: 16px
+				font-family: $font_os
+				box-sizing: border-box
+				z-index: 1
+			label
+				display: flex
+				align-items: center
+				position: absolute
+				left: 0
+				top: 28px
+				width: 45px
+				height: 32px
+				font-size: 16px
+				padding-left: 25px
+				box-sizing: border-box
+				cursor: text
+				z-index: 2
+				user-select: none
+				pointer-events: none
+			button
+				width: 100%
+				background-color: #000
+				padding: 8px 5px
+				cursor: pointer
+				&:hover
+					span
+						color: #fff
+				span
+					color: #000
+					font-size: 14px
+					font-weight: 700
+					text-transform: uppercase
+					font-family: $font_os
+					user-select: none
+	&_success
+		display: none
+		z-index: 12
+		.body
+			width: 400px
+			max-width: 100%
+			text-align: center
+			box-sizing: border-box
+			span
+				color: #000
+				font-size: 22px
