@@ -200,6 +200,7 @@ header
 		background: rgba(0,0,0,0.4)
 	.container
 		height: 566px
+		min-height: 380px
 		display: flex
 		align-items: center
 	.block
@@ -238,7 +239,23 @@ header
 			font-size: 82px
 			color: $color_red
 			text-decoration: none
-
+	.wa
+		display: none
+		margin-top: 10px
+	.whatsapp
+		display: inline-block
+		padding: 9px 24px
+		border: 2px solid
+		border-radius: 25px
+		border-color: #c4c4c4
+		text-decoration: none
+		user-select: none
+		span
+			display: inline
+			padding-top: 0px
+			font-size: 15px
+			color: #c4c4c4
+			font-family: $font_ro
 
 
 
@@ -332,11 +349,13 @@ header
 			user-select: none
 	.right
 		margin-right: auto
+		margin-bottom: 30px
 		img
 			display: block
 			height: 340px
 			user-select: none
 	.call_wa
+		margin-top: 50px
 		>div
 			display: flex
 			flex-wrap: nowrap
@@ -361,8 +380,6 @@ header
 		color: #fff
 		text-decoration: none
 		@include trs
-	.call_wa
-		margin-top: 80px
 	.call
 		cursor: pointer
 
@@ -760,8 +777,8 @@ footer
 		height: 100%
 		border-radius: 50%
 		background: rgba(200, 0, 0, 0.7)
-		background-image: url(/img/whatsapp.png)
-		background-size: 44px
+		background-image: url(/img/phone_pulse.svg)
+		background-size: 80px
 		background-position: 50%
 		background-repeat: no-repeat
 		box-sizing: border-box

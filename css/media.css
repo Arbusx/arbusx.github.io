@@ -212,6 +212,9 @@
   .c1 span a {
     font-size: 72px;
   }
+  .c1 .wa {
+    display: block;
+  }
 
   .c2 .container {
     padding: 8vw 0px;
@@ -242,6 +245,9 @@
   .c3 .left {
     max-width: 400px;
     padding: 0px 40px 0px 20px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
   .c3 .right img {
     width: calc(330px + (600 - 330) * ((100vw - 360px) / (767 - 360)));
@@ -377,7 +383,7 @@
     height: 70px;
   }
   .pulse .img {
-    background-size: 36px;
+    background-size: 66px;
   }
 }
 @media (max-width: 360px) {

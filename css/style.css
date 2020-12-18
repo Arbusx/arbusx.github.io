@@ -417,6 +417,7 @@ header .whatsapp:hover span {
 }
 .c1 .container {
   height: 566px;
+  min-height: 380px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,6 +466,29 @@ header .whatsapp:hover span {
   font-size: 82px;
   color: #ee1d24;
   text-decoration: none;
+}
+.c1 .wa {
+  display: none;
+  margin-top: 10px;
+}
+.c1 .whatsapp {
+  display: inline-block;
+  padding: 9px 24px;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #c4c4c4;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.c1 .whatsapp span {
+  display: inline;
+  padding-top: 0px;
+  font-size: 15px;
+  color: #c4c4c4;
+  font-family: "Russo One", "Helvetica", sans-serif;
 }
 
 /***
@@ -587,6 +611,7 @@ header .whatsapp:hover span {
 }
 .c3 .right {
   margin-right: auto;
+  margin-bottom: 30px;
 }
 .c3 .right img {
   display: block;
@@ -595,6 +620,9 @@ header .whatsapp:hover span {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.c3 .call_wa {
+  margin-top: 50px;
 }
 .c3 .call_wa > div {
   display: -webkit-box;
@@ -629,9 +657,6 @@ header .whatsapp:hover span {
   transition: background 0.1s ease, color 0.1s ease, -webkit-filter 0.1s ease;
   transition: background 0.1s ease, color 0.1s ease, filter 0.1s ease;
   transition: background 0.1s ease, color 0.1s ease, filter 0.1s ease, -webkit-filter 0.1s ease;
-}
-.c3 .call_wa {
-  margin-top: 80px;
 }
 .c3 .call {
   cursor: pointer;
@@ -1149,8 +1174,8 @@ footer .partners img {
   height: 100%;
   border-radius: 50%;
   background: rgba(200, 0, 0, 0.7);
-  background-image: url(/img/whatsapp.png);
-  background-size: 44px;
+  background-image: url(/img/phone_pulse.svg);
+  background-size: 80px;
   background-position: 50%;
   background-repeat: no-repeat;
   -webkit-box-sizing: border-box;
