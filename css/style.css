@@ -467,7 +467,7 @@ header .whatsapp:hover span {
   font-family: "Russo One", "Helvetica", sans-serif;
   font-weight: 700;
   font-size: 82px;
-  color: #ee1d24;
+  color: #ff3333;
   text-decoration: none;
 }
 .c1 .wa {
@@ -541,7 +541,7 @@ header .whatsapp:hover span {
   text-transform: uppercase;
   font-family: "Russo One", "Helvetica", sans-serif;
   font-weight: 400;
-  color: #ee1d24;
+  color: #ff3333;
   margin-bottom: 8px;
 }
 .c2 p {
@@ -852,7 +852,7 @@ header .whatsapp:hover span {
   text-align: center;
   font-family: "Russo One", "Helvetica", sans-serif;
   font-weight: 400;
-  color: #ee1d24;
+  color: #ff3333;
   margin: 0 auto;
   padding-bottom: 20px;
 }
@@ -861,7 +861,7 @@ header .whatsapp:hover span {
   content: "";
   width: 334px;
   height: 3px;
-  background-color: #ee1d24;
+  background-color: #ff3333;
   bottom: 0;
   left: calc(50% - 167px);
 }
