@@ -75,9 +75,6 @@
   .c5 p {
     font-size: 35px;
   }
-  .c5 span {
-    font-size: 16px;
-  }
 
   .c6 {
     overflow-x: hidden;
@@ -154,10 +151,6 @@
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-  }
-  header .logo_header img {
-    width: 100%;
-    max-width: 235px;
   }
   header .empty {
     display: none;
@@ -305,6 +298,7 @@
   .c5 .img {
     width: 100%;
     max-width: 465px;
+    height: 51vw;
   }
   .c5 p {
     margin-bottom: 15px;
@@ -312,7 +306,7 @@
   }
 
   .c6 .container {
-    padding: 60px 0px 100px 0px;
+    padding: 75px 0px 100px 0px;
   }
   .c6 h2 {
     font-size: 26px;

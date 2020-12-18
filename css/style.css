@@ -333,6 +333,9 @@ header .logo_header {
       -ms-user-select: none;
           user-select: none;
 }
+header .logo_header img {
+  width: 235px;
+}
 header .empty {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -716,7 +719,7 @@ header .whatsapp:hover span {
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   line-height: 1.1;
   margin-bottom: 30px;
   padding-bottom: 30px;
